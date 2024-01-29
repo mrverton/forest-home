@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Chest
+  - tree
   layers:
   - Default
   - TransparentFX
