@@ -11,7 +11,7 @@ public class looking : MonoBehaviour
     bool openInv = false;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (openInv)
             {
@@ -39,7 +39,7 @@ public class looking : MonoBehaviour
         {   
            if(raycast.transform.tag=="Chest")
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.F))
                 {
 
 

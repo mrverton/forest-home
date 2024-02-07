@@ -14,10 +14,19 @@ public class AnimationPlayer : MonoBehaviour
         player.SetFloat("Speed", speed);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            player.SetTrigger("Attack");
+            switch (Selector.instance.SelectorWeapon)
+            {
+                case 1:
+                    player.SetTrigger("Punch");
+                    break;
+                case 2:
+                    player.SetTrigger("Attack");
+                    break;
+            }
+            
 
         }
-        if (controller.Grounded)
+        if (input.jump)
         {
             player.SetTrigger("Jump");
         }
