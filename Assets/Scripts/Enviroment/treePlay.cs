@@ -11,6 +11,7 @@ public class treePlay : MonoBehaviour
 
     public void damage(int d)
     {
+        Bag.instance.AddItem("wood", 1);
         health -= d;
         if(health < 0)
         {
