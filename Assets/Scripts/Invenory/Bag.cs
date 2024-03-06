@@ -46,4 +46,9 @@ public class Bag : MonoBehaviour
         }
         invetory.Add(save);
     }
+
+    public List<Settings> returnRecources()
+    {
+        return recources;
+    }
 }
