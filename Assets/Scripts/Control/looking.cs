@@ -49,13 +49,13 @@ public class looking : MonoBehaviour
                     openInv = true;
                 }
             }
-           if(raycast.transform.tag== "tree")
+           if(raycast.transform.tag== "tree" || raycast.transform.tag == "rock")
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
 
                     raycast.transform.gameObject.GetComponent<treePlay>().damage(1);
-                    Debug.Log("tree");
+                   
 
                 }
             }
