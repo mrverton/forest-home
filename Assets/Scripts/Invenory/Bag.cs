@@ -10,7 +10,7 @@ public class Bag : MonoBehaviour
     [SerializeField] public List<Settings> invetory;
     [SerializeField] public int MaxCount;
 
-    void Start()
+    void Awake()
     {
         instance = this;
 

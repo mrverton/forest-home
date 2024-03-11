@@ -42,7 +42,7 @@ public class looking : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
 
-
+                    raycast.transform.GetComponent<ChestItem>().Spawn();
                     chest.SetActive(true);
                     inv.SetActive(true);
                     player.GetComponent<PlayerInput>().enabled = false;

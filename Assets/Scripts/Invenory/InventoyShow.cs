@@ -10,6 +10,7 @@ public class InventoyShow : MonoBehaviour
     [SerializeField] List<Image> picture;
     [SerializeField] List<Text> count;
     [SerializeField] List<Slider> durability;
+    [SerializeField] public int MaxCount = 20;
     
     public void fill()
     {
@@ -29,7 +30,7 @@ public class InventoyShow : MonoBehaviour
         int x = 0;
         foreach(Image a in picture)
         {
-            if (x < Bag.instance.MaxCount)
+            if (x < MaxCount)
             {
                 a.sprite = opened;
             }

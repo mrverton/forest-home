@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ChestItem : MonoBehaviour
 {
     [SerializeField] int MaxSpawn = 3;
     [SerializeField] int Maxspawn = 48;
-    [SerializeField] public List<Settings> items;
+    [SerializeField] public List<Settings> chestItems;
+    [SerializeField] List<Image> image;
+    [SerializeField] List<Slider> durabillity;
+    [SerializeField] List<Text> count;
+    
 
-    private void Start()
+    public void Spawn()
     {
         int currentSpawn = 0;
-        items = Bag.instance.returnRecources();
+        List<Settings>items = Bag.instance.returnRecources();
         foreach (Settings a in items)
         {   
            
@@ -19,10 +25,20 @@ public class ChestItem : MonoBehaviour
           
            if(randomRange < a.risk && MaxSpawn > currentSpawn)
            {
-               items.Add(a);
+               chestItems.Add(a);
                currentSpawn++;
            }
         }
+        Show();
     }
 
+    void Show()
+    {
+        for (int i = 0; i < chestItems.Count; i++)
+        {
+            image[i].sprite = chestItems[i].icon;
+            durabillity[i].value = chestItems[i].durability;
+            count[i].text = chestItems[i].count.ToString();
+        }
+    }
 }
