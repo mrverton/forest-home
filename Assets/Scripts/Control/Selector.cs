@@ -22,9 +22,15 @@ public class Selector : MonoBehaviour
         {
             case 1:
                 bag[0].SetActive(false);
+                bag[1].SetActive(false);
                 break;
             case 2:
                 bag[0].SetActive(true);
+                bag[1].SetActive(false);
+                break;
+            case 3:
+                bag[1].SetActive(true);
+                bag[0].SetActive(false);
                 break;
                  
         }
@@ -36,7 +42,7 @@ public class Selector : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             SelectorWeapon++;
-            if(SelectorWeapon == 3)
+            if(SelectorWeapon == 4)
             {
                 SelectorWeapon = 1;
                 
@@ -50,7 +56,8 @@ public class Selector : MonoBehaviour
             if (SelectorWeapon == 0)
             {   
 
-                SelectorWeapon = 2;
+                SelectorWeapon = 3;
+
 
             }
             ChangeWeapon();
