@@ -6,11 +6,22 @@ using UnityEngine.InputSystem;
 public class looking : MonoBehaviour
 {
     Ray ray;
-    [SerializeField] GameObject player, chest, inv;
+    [SerializeField] GameObject player, chest, inv,build;
     public LayerMask layer;
     bool openInv = false;
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (build.active)
+            {
+                build.SetActive(false);
+            }
+            else
+            {
+                build.SetActive(true);
+            }
+        }
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (openInv)
